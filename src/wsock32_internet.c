@@ -122,7 +122,7 @@ int WINAPI fake_sendto(SOCKET s, const char *buf, int len, int flags, const stru
         {
             net_write_int8(CMD_DIRECT);
             net_write_data((void *)buf, len);
-            net_send(&to_in);
+            return net_send(&to_in);
         }
     }
 
